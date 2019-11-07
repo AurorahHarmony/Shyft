@@ -1,0 +1,32 @@
+{
+  "name": "shyft",
+  "version": "1.0.0",
+  "description": "Shyft",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AurorahHarmony/Shyft.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AurorahHarmony/Shyft/issues"
+  },
+  "homepage": "https://github.com/AurorahHarmony/Shyft#readme",
+  "dependencies": {
+    "ascii-table": "0.0.9",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.7.8",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
+}
