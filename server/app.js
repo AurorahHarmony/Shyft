@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 //Global Constants
-const serverPort = process.env.PORT || 3001;
+const serverPort = process.env.PORT || 3000;
 
 //Require Express Packages
 const express = require('express');
