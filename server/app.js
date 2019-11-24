@@ -1,12 +1,13 @@
 require('dotenv').config();
 
 //Global Constants
-const serverPort = process.env.PORT || 3000;
+const serverPort = process.env.PORT || 3001;
 
 //Require Express Packages
 const express = require('express');
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 //Connect to MongoDB
 const mongoose = require('mongoose');
@@ -15,10 +16,11 @@ const mongoose = require('mongoose');
 //Express configuration
 const app = express();
 
-app.set('view engine', 'ejs');
-app.use('/src', express.static('public/src'));
+// app.set('view engine', 'ejs');
+// app.use('/src', express.static('public/src'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
 
 //Passport Configuration
 const passport = require('passport');
@@ -29,22 +31,39 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Initalize flasher so that it can be stored in session data
-const flash = require('connect-flash');
-app.use(flash());
+// const flash = require('connect-flash');
+// app.use(flash());
 
 //Initialize Passport
-const initPassport = require('./passport/init');
+const initPassport = require('../passport/init');
 initPassport(passport);
 
 //Load Routes
-const routePath = require('path').join(__dirname, 'routes');
+const fs = require('fs');
+const path = require('path');
 
-require('fs')
-	.readdirSync(routePath)
-	.forEach(file => {
-		let newRoute = require('./routes/' + file);
-		app.use(newRoute.route, newRoute.methods(passport));
+function findInDir(dir, filter, fileList = []) {
+	const files = fs.readdirSync(dir);
+
+	files.forEach(file => {
+		const filePath = path.join(dir, file);
+		const fileStat = fs.lstatSync(filePath);
+
+		if (fileStat.isDirectory()) {
+			findInDir(filePath, filter, fileList);
+		} else if (filter.test(filePath)) {
+			fileList.push(filePath.replace(__dirname, ''));
+		}
 	});
+
+	return fileList;
+}
+
+const routes = findInDir(__dirname + '/routes', /\.js$/);
+routes.forEach(file => {
+	let newRoute = require('.' + file);
+	app.use(newRoute.route, newRoute.methods(passport));
+});
 
 //Server Error Handling
 app.use((req, res, next) => {

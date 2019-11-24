@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const thisRoute = '/';
+const thisRoute = '/api/products';
 
 //Routes
 module.exports = {
