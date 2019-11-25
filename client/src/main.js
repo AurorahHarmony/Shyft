@@ -4,21 +4,23 @@ Vue.use(VueRouter);
 
 Vue.config.productionTip = false;
 
-const Foo = { template: '<div>foo</div>' };
-const Bar = { template: '<div>bar</div>' };
+//Import Frameworks
+import './../node_modules/bulma/css/bulma.css';
 
-const routes = [
-	{ path: '/foo', component: Foo },
-	{ path: '/bar', component: Bar }
-];
+//Import Components
+import Index from '@/pages/Home.vue';
 
+//Define a route for a component
+const routes = [{ path: '/', component: Index }];
+
+//Instantiate Router
 const router = new VueRouter({
 	mode: 'history',
-	routes // short for `routes: routes`
+	routes
 });
 
+//Tell Vue what the root component is
 import App from './App.vue';
-
 new Vue({
 	el: '#app',
 	template: '<App/>',
