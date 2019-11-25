@@ -14,7 +14,13 @@ import Test from '@/pages/Test.vue';
 
 //Define a route for a component
 const routes = [
-	{ path: '/', component: Index },
+	{
+		path: '/',
+		component: Index,
+		meta: {
+			title: 'Home'
+		}
+	},
 	{ path: '/test', component: Test }
 ];
 
@@ -22,6 +28,12 @@ const routes = [
 const router = new VueRouter({
 	mode: 'history',
 	routes
+});
+
+//Run code before each route update
+router.beforeEach((to, from, next) => {
+	document.title = to.meta.title ? `Shyft: ${to.meta.title}` : 'Shyft';
+	next();
 });
 
 //Instantiate app
