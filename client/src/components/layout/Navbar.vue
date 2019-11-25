@@ -81,3 +81,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+nav {
+  box-shadow: 0px 1px 5px 0px #00000029;
+}
+</style>
