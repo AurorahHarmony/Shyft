@@ -22,6 +22,14 @@
     <div id="navbar" class="navbar-menu" v-bind:class="[isRolled ? '' : 'is-active']">
       <div class="navbar-start">
         <router-link class="navbar-item" v-bind:to="'/test'">Test 1</router-link>
+        <div class="navbar-item field">
+          <p class="control has-icons-right">
+            <input class="input is-rounded" type="search" placeholder="Search..." />
+            <span class="icon is-small is-right">
+              <icon />
+            </span>
+          </p>
+        </div>
       </div>
 
       <div class="navbar-end">
