@@ -6,14 +6,17 @@ Vue.config.productionTip = false;
 
 //Import Frameworks
 import './../node_modules/bulma/css/bulma.css';
+import '@/assets/global-styles.css';
 
 //Import Components
 import Index from '@/pages/Home.vue';
-import Test from '@/pages/Test.vue'
+import Test from '@/pages/Test.vue';
 
 //Define a route for a component
-const routes = [{ path: '/', component: Index },
-{path: '/test', component: Test}];
+const routes = [
+	{ path: '/', component: Index },
+	{ path: '/test', component: Test }
+];
 
 //Instantiate Router
 const router = new VueRouter({

@@ -1,7 +1,7 @@
 <template class="has-navbar-fixed-top">
   <div id="app">
     <app-nav></app-nav>
-    <router-view style="padding-top: 3.25rem;"></router-view>
+    <router-view style="padding-top: 3.25rem;" class="app-body"></router-view>
     <app-footer></app-footer>
   </div>
 </template>
