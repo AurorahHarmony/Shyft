@@ -1,7 +1,9 @@
 <template class="has-navbar-fixed-top">
   <div id="app">
     <app-nav></app-nav>
-    <router-view style="padding-top: 3.25rem;" class="app-body"></router-view>
+    <div class="container is-widescreen">
+      <router-view class="app-body"></router-view>
+    </div>
     <app-footer></app-footer>
   </div>
 </template>
@@ -19,3 +21,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.app-body {
+  padding-top: 4rem;
+}
+</style>
