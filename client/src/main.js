@@ -19,8 +19,9 @@ const router = new VueRouter({
 	routes
 });
 
-//Tell Vue what the root component is
+//Instantiate app
 import App from './App.vue';
+
 new Vue({
 	el: '#app',
 	template: '<App/>',
