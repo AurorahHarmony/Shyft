@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
-      </a>
+      <router-link class="navbar-item" v-bind:to="'/'">
+        <img alt="Shyft Logo" src="@/assets/logo.png" height="28" />
+      </router-link>
 
       <a
         role="button"
@@ -21,21 +21,7 @@
 
     <div id="navbar" class="navbar-menu" v-bind:class="[isRolled ? '' : 'is-active']">
       <div class="navbar-start">
-        <a class="navbar-item">Home</a>
-
-        <a class="navbar-item">Documentation</a>
-
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">More</a>
-
-          <div class="navbar-dropdown">
-            <a class="navbar-item">About</a>
-            <a class="navbar-item">Jobs</a>
-            <a class="navbar-item">Contact</a>
-            <hr class="navbar-divider" />
-            <a class="navbar-item">Report an issue</a>
-          </div>
-        </div>
+        <router-link class="navbar-item" v-bind:to="'/test'">Test 1</router-link>
       </div>
 
       <div class="navbar-end">
@@ -47,13 +33,33 @@
             <a class="button is-light">Log in</a>
           </div>
         </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">Username</a>
+
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item">Profile</a>
+            <hr class="navbar-divider" />
+            <a class="navbar-item">
+              <button class="button is-warning">Logout</button>
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">Cart</a>
+
+          <div class="navbar-dropdown is-right">
+            <div class="navbar-item">
+              <p>Some random block of text will be placed in here</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
 </template>
 <script>
 export default {
-  name: "Header",
+  name: "Navbar",
   data() {
     return {
       isRolled: true

@@ -9,9 +9,11 @@ import './../node_modules/bulma/css/bulma.css';
 
 //Import Components
 import Index from '@/pages/Home.vue';
+import Test from '@/pages/Test.vue'
 
 //Define a route for a component
-const routes = [{ path: '/', component: Index }];
+const routes = [{ path: '/', component: Index },
+{path: '/test', component: Test}];
 
 //Instantiate Router
 const router = new VueRouter({
