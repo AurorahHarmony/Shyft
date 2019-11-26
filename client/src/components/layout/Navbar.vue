@@ -25,9 +25,7 @@
         <div class="navbar-item field">
           <p class="control has-icons-right">
             <input class="input is-rounded" type="search" placeholder="Search..." />
-            <span class="icon is-small is-right">
-              <icon />
-            </span>
+            <span class="icon is-small is-right"></span>
           </p>
         </div>
       </div>
