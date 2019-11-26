@@ -1,9 +1,7 @@
 <template class="has-navbar-fixed-top">
   <div id="app">
     <app-nav></app-nav>
-    <div class="container is-widescreen">
-      <router-view class="app-body"></router-view>
-    </div>
+    <router-view class="app-body"></router-view>
     <app-footer></app-footer>
   </div>
 </template>
@@ -24,6 +22,6 @@ export default {
 
 <style scoped>
 .app-body {
-  margin-top: 4rem;
+  margin-top: 3.4rem;
 }
 </style>
