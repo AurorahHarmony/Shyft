@@ -24,6 +24,6 @@ export default {
 
 <style scoped>
 .app-body {
-  padding-top: 4rem;
+  margin-top: 4rem;
 }
 </style>
