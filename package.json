@@ -19,7 +19,7 @@
 	"homepage": "https://github.com/AurorahHarmony/Shyft#readme",
 	"dependencies": {
 		"ascii-table": "0.0.9",
-		"bcrypt": "^3.0.6",
+		"bcrypt": "^5.0.0",
 		"body-parser": "^1.19.0",
 		"connect-flash": "^0.1.1",
 		"cors": "^2.8.5",
